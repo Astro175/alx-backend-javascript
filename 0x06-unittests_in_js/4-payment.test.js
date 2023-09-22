@@ -8,7 +8,7 @@ describe('Testing using Sinon that stubs the add function', () => {
   it('Uses stub to make calculateNumber return 10', () => {
 
     const stub = Sinon.stub(Utils, 'calculateNumber');
-    const spy = Sinon.stub(console, 'log');
+    const spy = Sinon.spy(console, 'log');
 
     stub.returns(10);
 
