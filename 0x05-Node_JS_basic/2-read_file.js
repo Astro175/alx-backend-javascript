@@ -7,7 +7,7 @@ function countStudents(filepath) {
   try {
     const data = fs.readFileSync(filepath, { encoding: 'utf-8', flag: 'r' });
     // Splits the data into rows to count the rows
-    const rows = data.split('\n');
+    const rows = data.toString().split('\n');
     const courses = {};
     const names = {};
     for (let i = 0; i < rows.length; i += 1) {
