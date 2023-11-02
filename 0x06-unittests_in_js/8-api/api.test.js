@@ -11,7 +11,7 @@ describe('Tests a basic express app for correct status code', () => {
     })
     it('returns the correct message', () => {
         request(url, (err, response, body) => {
-            chai.expect(body).to.equal('Welcome to the payment system');
+            chai.expect(response.body).to.equal('Welcome to the payment system');
         })
     })
 })
