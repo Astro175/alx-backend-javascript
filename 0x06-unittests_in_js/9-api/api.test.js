@@ -17,17 +17,23 @@ describe('Index Page', function () {
   });
 });
 
-describe('Cart Page', () => {
+describe('Cart Page', function () {
   it('Tests the id route, when id is a number', () => {
     const url = 'http://localhost:7865/cart/63';
     request(url, (err, response, body) => {
       chai.expect(response.statusCode).to.equal(200);
     });
   });
-  it('Tests the id route, when id is not a number', () => {
+  it('Tests the id route, when id is not a number',function() {
     const url = 'http://localhost:7865/cart/ee';
     request(url, (err, response, body) => {
       chai.expect(response.statusCode).to.equal(404);
     });
   });
+  it('Tests for return statement in cart page', function() {
+    const url = 'http://localhost:7865/cart/12';
+    request(url, (err, response, body) => {
+    chai.expect(response.body).to.equal('Payment methods for cart 12');
+    });
+  })
 });
