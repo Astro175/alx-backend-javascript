@@ -2,7 +2,7 @@ const chai = require('chai');
 const sinon = require('sinon');
 const request = require('request');
 
-describe('Tests a root route', () => {
+describe('Index Page', () => {
   it('Tests the root route', () => {
     const url = 'http://localhost:7865/';
     request(url, (err, response, body) => {
@@ -17,7 +17,7 @@ describe('Tests a root route', () => {
   });
 });
 
-describe('Test cases for the cart page', () => {
+describe('Cart Page', () => {
   it('Tests the id route, when id is a number', () => {
     const url = 'http://localhost:7865/cart/63';
     request(url, (err, response, body) => {
