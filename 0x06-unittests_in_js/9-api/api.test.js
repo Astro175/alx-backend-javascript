@@ -3,6 +3,19 @@ const sinon = require('sinon');
 const request = require('request');
 
 describe('Tests a basic express app', () => {
+
+  it('Tests the root route', () => {
+     const url = 'http://localhost:7865/'
+        request(url, (err, response, body) => {
+            chai.expect(response.statusCode).to.equal(200);
+        })
+    })
+    it('returns the correct message', () => {
+        const url = 'http://localhost:7865/'
+        request(url, (err, response, body) => {
+            chai.expect(response.body).to.equal('Welcome to the payment system');
+        })
+    })
   it('Tests the id route, when id is a number', () => {
     const url = 'http://localhost:7865/cart/63';
     request(url, (err, response, body) => {
