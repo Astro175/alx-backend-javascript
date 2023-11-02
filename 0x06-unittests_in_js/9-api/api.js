@@ -6,12 +6,11 @@ app.get('/', (req, res) => {
   res.send('Welcome to the payment system');
 });
 
-app.get('/:id', (req, res) => {
+app.get('/cart/:id(\\d+)', (req, res) => {
   const { id } = req.params;
 
-  if (typeof (id) === 'number') {
-    return res.send(`Payment method for cart ${id}`);
-  }
+  res.send(`Payment method for cart ${id}`);
+  
 });
 
 app.listen(port, () => {
